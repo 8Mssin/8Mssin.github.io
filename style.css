@@ -1,1 +1,460 @@
+@import url("https://fonts.googleapis.com/css2?family=Ubuntu:wght@500&family=Yusei+Magic&family=Zen+Kaku+Gothic+New:wght@500&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+  text-decoration: none;
+  color: #000;
+}
 
+body {
+  --width: calc(100vw - 10px);
+  width: var(--width);
+  height: 100vh;
+  background-color: #fff;
+  overflow-x: hidden;
+}
+body::-webkit-scrollbar {
+  width: 10px;
+}
+body::-webkit-scrollbar-track {
+  background-color: #aaa;
+}
+body::-webkit-scrollbar-thumb {
+  background-color: #444;
+  border-radius: 10px;
+  border: 2px solid transparent;
+  background-clip: padding-box;
+}
+body::-webkit-scrollbar-thumb:active {
+  background-color: #222;
+}
+
+header {
+  position: relative;
+  z-index: 6;
+  transform: translateY(-50%);
+  width: auto;
+  height: 300px;
+  aspect-ratio: 1/1;
+  margin-inline: auto;
+  background-color: #000;
+  border-radius: 0 0 50% 50%;
+  animation-name: h_appear;
+  animation-duration: 1s;
+  animation-fill-mode: both;
+}
+header img {
+  position: absolute;
+  bottom: 5%;
+  left: 0;
+  right: 0;
+  margin-inline: auto;
+  z-index: 1;
+  height: 140px;
+  display: block;
+}
+header .name {
+  position: relative;
+  z-index: 2;
+  display: block;
+  text-shadow: 0 0 1rem #fff;
+  font-size: 4rem;
+  font-family: "Yusei Magic";
+  transform: scaleX(1.3);
+  text-align: center;
+  line-height: 150px;
+}
+
+.s_svg {
+  position: fixed;
+  z-index: 999;
+  top: -0.1rem;
+  right: 0;
+  width: 3vw;
+  aspect-ratio: 1/1;
+  padding: 0.1rem;
+  border-radius: 0 0 0 5px;
+  background-color: #862020;
+  cursor: pointer;
+}
+.s_svg:active {
+  background-color: #571414;
+}
+.s_svg .s_switch svg {
+  position: absolute;
+  top: 0.1rem;
+  fill: #fff;
+  rotate: 0deg;
+  transition: all 0.3s;
+}
+.s_svg .s_switch svg.svg {
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.3s;
+  rotate: 360deg;
+}
+
+aside {
+  position: fixed;
+  top: 0;
+  right: 0;
+  height: 100vh;
+  width: 25vw;
+  background-color: rgba(200, 156, 147, 0.6666666667);
+  text-shadow: 0 0 10px #fff;
+  padding-top: 5%;
+  transform: translateX(25vw);
+  transition: transform 0.3s ease-out;
+}
+aside.active {
+  transform: translateX(0);
+  transition: transform 0.3s ease-out;
+}
+aside .ttl {
+  font-family: "Zen Kaku Gothic New";
+  font-size: 1.8rem;
+  display: block;
+  text-align: center;
+  margin-inline: 5%;
+  border: 1px solid #000;
+}
+aside .sec {
+  margin-inline: 10%;
+  margin-top: 2%;
+}
+aside .sec a {
+  position: relative;
+  display: block;
+  font-family: "Ubuntu";
+  font-size: 1.5rem;
+  padding-left: 5%;
+  padding-block: 0.5rem;
+  transition: all 0.3s ease-out;
+  border-radius: 10px;
+}
+aside .sec a:hover {
+  background-color: #c89c93;
+  scale: 1.1;
+  transition: all 0.3s ease-out;
+}
+
+main {
+  width: var(--width);
+}
+main span.h {
+  position: fixed;
+  z-index: 5;
+  inset: 0;
+  margin-inline: auto;
+  width: 5px;
+  height: 100vh;
+  background-color: #000;
+  animation-name: hspan;
+  animation-duration: 2s;
+  animation-fill-mode: both;
+}
+main .snsicon {
+  position: fixed;
+  left: 0;
+  right: 0;
+  margin-inline: auto;
+  height: 5vh;
+  padding: 1vh;
+  aspect-ratio: 1/1;
+  z-index: 10;
+  border: 1px solid #000;
+  border-radius: 50%;
+  background-color: #fff;
+  animation-name: snsicon;
+  animation-duration: 0.5s;
+  animation-delay: 1s;
+  animation-fill-mode: both;
+}
+main .snsicon.youtube {
+  top: 40vh;
+}
+main .snsicon.twitter {
+  top: 70vh;
+}
+main .section {
+  position: absolute;
+  width: 50vw;
+  height: 47vh;
+  animation-duration: 1s;
+  animation-fill-mode: both;
+  animation-delay: 0.5s;
+}
+main .section .ttl {
+  position: relative;
+  font-size: 3rem;
+  font-family: "Ubuntu";
+  border-bottom: 4px solid #2f2086;
+  margin-inline: 10vw;
+  color: #2f2086;
+}
+main .section .ttl .svg {
+  position: absolute;
+  top: -2vh;
+  left: 45%;
+  width: 7vw;
+}
+main .section .ttl .svg svg {
+  fill: rgba(47, 32, 134, 0.3333333333);
+}
+main .profile {
+  left: 0;
+  top: 3vh;
+  animation-name: lttl;
+}
+main .profile .ttl {
+  transform: translateX(-10vw);
+  padding-left: 2vw;
+}
+main .profile .desc {
+  margin: 1.5rem;
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: flex-start;
+}
+main .profile .desc img {
+  width: 8rem;
+  aspect-ratio: 1/1;
+  border-radius: 50%;
+}
+main .profile .desc p {
+  display: inline;
+  font-size: 1.3rem;
+  margin-left: 0.5rem;
+  font-family: "Zen Kaku Gothic New";
+}
+main .profile .desc p .title {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: #000;
+  border-bottom: none;
+  text-align: left;
+  font-family: "Ubuntu", "Zen Kaku Gothic New";
+}
+main .profile .desc p .zenkaku {
+  color: #f00;
+}
+main .profile a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 20vw;
+  aspect-ratio: 6/1;
+  background-color: #2f2086;
+  margin-left: 1.5rem;
+  border-radius: 10px;
+  font-family: "Yusei Magic";
+  font-size: 1.5rem;
+  color: #fff;
+  cursor: pointer;
+  border: none;
+  outline: none;
+  box-shadow: 2px 2px 0 #735aff;
+}
+main .profile a:hover {
+  transform: translate(2px, 2px);
+  box-shadow: none;
+}
+main .profile a:active {
+  transform: translate(4px, 4px);
+  box-shadow: inset 2px 2px 0 0 #735aff;
+}
+main .news {
+  right: 0;
+  top: 3vh;
+  animation-name: rttl;
+}
+main .news .ttl {
+  transform: translateX(10vw);
+  padding-right: 2vw;
+  text-align: right;
+}
+main .news .cards {
+  display: flex;
+  justify-content: flex-end;
+  margin: 1.5rem;
+  gap: 1.5rem;
+}
+main .news .cards .card {
+  position: relative;
+  margin-top: 0.5rem;
+  display: block;
+  width: 39%;
+  aspect-ratio: 8/6;
+  box-sizing: content-box;
+  background-color: #eee;
+  border: 2px solid #2f2086;
+  border-radius: 10px;
+  font-family: "Zen Kaku Gothic New";
+  cursor: pointer;
+  transition: all 0.4s ease-out;
+}
+main .news .cards .card:hover {
+  scale: 1.08;
+  rotate: 5deg;
+  background-color: #2f2086;
+  transition: all 0.4s ease-out;
+}
+main .news .cards .card:hover span {
+  color: #fff;
+  transition: all 0.4s ease-out;
+}
+main .news .cards .card .title {
+  position: absolute;
+  display: block;
+  text-align: center;
+  font-size: 1.1rem;
+  line-height: 1.3rem;
+  bottom: 1.2rem;
+  left: 0;
+  right: 0;
+  margin-inline: auto;
+}
+main .news .cards .card .time {
+  position: absolute;
+  bottom: 0.3rem;
+  right: 0.3rem;
+  font-family: "Ubuntu";
+  font-size: 0.9rem;
+  transition: all 0.4s ease-out;
+}
+main .news .cards .card img {
+  width: 90%;
+  display: block;
+  margin-inline: auto;
+  margin-top: 0.5rem;
+}
+main .videos {
+  left: 0;
+  top: 53vh;
+  animation-name: lttl;
+}
+main .videos .ttl {
+  transform: translateX(-10vw);
+  padding-left: 2vw;
+}
+main .videos iframe {
+  margin-left: 1.5rem;
+  margin-top: 1.5rem;
+  border-radius: 10px;
+  height: 73%;
+}
+main .videos iframe.favorite {
+  aspect-ratio: 16/9;
+}
+main .videos iframe.new {
+  aspect-ratio: 9/16;
+}
+main .tweet {
+  right: 0;
+  top: 53vh;
+  animation-name: rttl;
+}
+main .tweet .ttl {
+  transform: translateX(10vw);
+  padding-right: 2vw;
+  text-align: right;
+}
+main .tweet .twitter {
+  margin-left: 2.5rem;
+  margin-top: 1.5rem;
+}
+main .tweet .twitter .twitter-timeline {
+  font-family: "Ubuntu";
+  margin-left: auto;
+  margin-right: 1rem;
+  font-size: 2rem;
+}
+main .tweet .twitter .twitter-timeline div.css-1dbjc4n.r-140t1nj.r-qklmqi.r-1cbz2o1 {
+  display: none;
+}
+main .contact {
+  left: 0;
+  top: 103vh;
+  animation-name: lttl;
+}
+main .contact .ttl {
+  transform: translateX(-10vw);
+  padding-left: 2vw;
+}
+main .contact .careful {
+  margin: 1.2rem;
+  font-size: 1.2rem;
+  font-family: "Zen Kaku Gothic New";
+  color: #000;
+}
+main .contact .careful .mail {
+  font-size: 2rem;
+  font-family: "Ubuntu", "Zen Kaku Gothic New";
+  -webkit-user-select: all;
+     -moz-user-select: all;
+          user-select: all;
+  cursor: pointer;
+}
+
+footer {
+  position: absolute;
+  top: 150vh;
+  width: var(--width);
+  height: 15vh;
+  background-color: #000;
+  z-index: 10000;
+}
+footer .copy {
+  font-size: 1.2rem;
+  font-family: "Ubuntu";
+  text-align: center;
+  line-height: 15vh;
+  color: #fff;
+}
+
+@keyframes h_appear {
+  0% {
+    transform: translateY(-100%);
+  }
+  100% {
+    transform: translateY(-50%);
+  }
+}
+@keyframes hspan {
+  0% {
+    transform: translateY(-100%);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+@keyframes lttl {
+  0% {
+    transform: translateX(-50vw);
+  }
+  100% {
+    transform: translateX(0vw);
+  }
+}
+@keyframes rttl {
+  0% {
+    transform: translateX(50vw);
+  }
+  100% {
+    transform: translateX(0vw);
+  }
+}
+@keyframes snsicon {
+  0% {
+    scale: 0;
+  }
+  60% {
+    scale: 1.2;
+  }
+  100% {
+    scale: 1;
+  }
+}/*# sourceMappingURL=style.css.map */
