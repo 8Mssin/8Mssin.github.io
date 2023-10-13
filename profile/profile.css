@@ -1,0 +1,357 @@
+@import url("https://fonts.googleapis.com/css2?family=Ubuntu:wght@500&family=Yusei+Magic&family=Zen+Kaku+Gothic+New:wght@500&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+  text-decoration: none;
+}
+
+body {
+  --width: calc(100vw - 10px);
+  width: var(--width);
+  background-color: #fff;
+  overflow-x: hidden;
+}
+body::-webkit-scrollbar {
+  width: 10px;
+}
+body::-webkit-scrollbar-track {
+  background-color: #aaa;
+}
+body::-webkit-scrollbar-thumb {
+  background-color: #444;
+  border-radius: 10px;
+  border: 2px solid transparent;
+  background-clip: padding-box;
+}
+body::-webkit-scrollbar-thumb:active {
+  background-color: #222;
+}
+
+header {
+  position: relative;
+  z-index: 6;
+  transform: translateY(-50%);
+  width: auto;
+  height: 300px;
+  aspect-ratio: 1/1;
+  margin-inline: auto;
+  background-color: #000;
+  border-radius: 0 0 50% 50%;
+  animation-name: h_appear;
+  animation-duration: 1s;
+  animation-fill-mode: both;
+}
+header img {
+  position: absolute;
+  bottom: 5%;
+  left: 0;
+  right: 0;
+  margin-inline: auto;
+  z-index: 1;
+  height: 140px;
+  display: block;
+}
+
+.title {
+  position: relative;
+}
+.title h1 {
+  position: relative;
+  display: block;
+  text-align: center;
+  font-size: 3.5rem;
+  font-weight: normal;
+  font-family: "Ubuntu";
+  color: #2f2086;
+  transform: translateY(-150px);
+  margin-inline: 30vw;
+  animation-name: h1title;
+  animation-duration: 1s;
+  animation-delay: 0.2s;
+  animation-fill-mode: both;
+}
+.title h1::after {
+  content: "";
+  text-align: center;
+  display: block;
+  position: absolute;
+  bottom: 0;
+  height: 4px;
+  background-color: #2f2086;
+  animation-name: h1titleline;
+  animation-duration: 1s;
+  animation-delay: 0.7s;
+  animation-fill-mode: both;
+}
+.title .titlesvg {
+  position: absolute;
+  left: 55vw;
+  top: -180px;
+  width: 9vw;
+  aspect-ratio: 1/1;
+  animation-name: titlesvg;
+  animation-duration: 0.5s;
+  animation-delay: 1.5s;
+  animation-fill-mode: both;
+}
+.title .titlesvg svg {
+  fill: rgba(47, 32, 134, 0.3333333333);
+}
+
+main {
+  width: var(--width);
+  display: block;
+  transform: translateY(-100px);
+  animation-name: main;
+  animation-duration: 1s;
+  animation-delay: 1.7s;
+  animation-fill-mode: both;
+}
+main .desc {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-inline: 3vw;
+}
+main .desc img {
+  display: block;
+  border-radius: 50%;
+}
+main .desc p {
+  max-width: 50vw;
+  display: block;
+  font-size: 1.5rem;
+  font-family: "Zen Kaku Gothic New";
+  color: #000;
+  margin-left: 0.3rem;
+}
+main .desc p .ttl {
+  font-weight: bold;
+  font-size: 2.1rem;
+}
+main .sns {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+  width: var(--width);
+  height: 200px;
+  background-color: #2f2086;
+  margin-block: 50px;
+  z-index: 1;
+}
+main .sns .snsicon {
+  position: relative;
+  z-index: 3;
+  height: 35px;
+  aspect-ratio: 1/1;
+  background-color: #fff;
+  border-radius: 50%;
+  padding: 10px;
+  transition: all 0.3s ease-out;
+}
+main .sns .snsicon:hover {
+  scale: 1.1;
+  transition: all 0.3s ease-out;
+  box-shadow: 0 0 10px #fff;
+}
+main .sns .ttl {
+  position: absolute;
+  font-size: 230px;
+  font-family: "Ubuntu";
+  z-index: 2;
+  color: #3a28a3;
+}
+main .history {
+  width: var(--width);
+  margin-top: 50px;
+}
+main .history table {
+  margin-inline: auto;
+  display: block;
+  width: 80vw;
+  border-collapse: collapse;
+}
+main .history table tr {
+  width: 80vw;
+  font-family: "Zen Kaku Gothic New";
+}
+main .history table tr th {
+  text-align: center;
+  color: #f00;
+  font-size: 1.6rem;
+  border-bottom: 1px solid #888;
+  font-weight: normal;
+}
+main .history table tr th:first-child {
+  width: 15vw;
+}
+main .history table tr th:last-child {
+  width: 65vw;
+}
+main .history table tr td {
+  text-align: center;
+  padding-block: 0.5rem;
+  font-size: 1.4rem;
+  color: #000;
+  border-bottom: 1px solid #888;
+}
+main .history table tr td:first-child {
+  font-family: "Ubuntu";
+}
+main .history table tr td.important {
+  color: #f00;
+}
+main .history table tr td a {
+  position: relative;
+  color: #00f;
+}
+main .history table tr td a:active {
+  color: #005;
+}
+main .history table tr td a:active::after {
+  background-color: #005;
+}
+main .history table tr td a::after {
+  content: "";
+  display: block;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: #00f;
+}
+main .plan {
+  margin-top: 50px;
+  width: var(--width);
+  height: 400px;
+  background-color: rgba(47, 32, 134, 0.5333333333);
+  padding-top: 1rem;
+}
+main .plan p.ttl {
+  position: relative;
+  color: #f00;
+  text-align: center;
+  font-size: 3rem;
+  font-family: "Yusei Magic";
+}
+main .plan p.desc {
+  display: block;
+  text-align: center;
+  font-size: 1.5rem;
+  color: #000;
+  font-family: "Zen Kaku Gothic New";
+}
+main .plan p.desc .strong {
+  position: relative;
+  font-size: 1.8rem;
+  font-weight: bold;
+}
+main .plan p.desc .strong::after {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 2px;
+  background-color: #000;
+  bottom: 0;
+  left: 0;
+  position: absolute;
+}
+main .plan .tweet {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 30vw;
+  aspect-ratio: 6/1;
+  background-color: #167bb9;
+  margin-inline: auto;
+  margin-top: 1rem;
+  border-radius: 20px;
+  box-shadow: 3px 3px 0 #105885;
+  cursor: pointer;
+}
+main .plan .tweet:hover {
+  transform: translate(3px, 3px);
+  box-shadow: none;
+}
+main .plan .tweet:active {
+  transform: translate(6px, 6px);
+  box-shadow: inset 3px 3px 0 #105885;
+}
+main .plan .tweet .svg {
+  display: flex;
+  align-items: center;
+  width: 3vw;
+  height: auto;
+}
+main .plan .tweet p {
+  display: block;
+  font-size: 1.5rem;
+  color: #fff;
+  font-family: "Yusei Magic";
+  font-weight: normal;
+}
+
+footer {
+  width: var(--width);
+  height: 100px;
+  background-color: #000;
+}
+footer .copy {
+  font-size: 1.3rem;
+  color: #fff;
+  font-family: "Ubuntu";
+  text-align: center;
+  line-height: 100px;
+}
+
+@keyframes h_appear {
+  0% {
+    transform: translateY(-100%);
+  }
+  100% {
+    transform: translateY(-50%);
+  }
+}
+@keyframes h1title {
+  0% {
+    transform: translateY(-500px);
+  }
+  100% {
+    transform: translateY(-140px);
+  }
+}
+@keyframes h1titleline {
+  0% {
+    width: 0%;
+  }
+  100% {
+    width: 100%;
+  }
+}
+@keyframes titlesvg {
+  0% {
+    scale: 0;
+  }
+  60% {
+    scale: 1.2;
+  }
+  100% {
+    scale: 1;
+  }
+}
+@keyframes main {
+  0% {
+    opacity: 0;
+    pointer-events: none;
+  }
+  100% {
+    opacity: 1;
+    pointer-events: all;
+  }
+}/*# sourceMappingURL=profile.css.map */
