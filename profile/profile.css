@@ -230,15 +230,18 @@ main .plan {
   margin-top: 50px;
   width: var(--width);
   height: 400px;
-  background-color: rgba(47, 32, 134, 0.5333333333);
+  background-color: rgba(47, 32, 134, 0.3333333333);
   padding-top: 1rem;
 }
 main .plan p.ttl {
   position: relative;
-  color: #f00;
+  color: #000;
   text-align: center;
   font-size: 3rem;
   font-family: "Yusei Magic";
+  border: 2px solid #000;
+  margin-inline: 10vw;
+  margin-bottom: 30px;
 }
 main .plan p.desc {
   display: block;
